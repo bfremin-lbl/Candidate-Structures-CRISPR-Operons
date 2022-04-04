@@ -11,7 +11,6 @@ overcluster2 -s 20 parsed_blastresults.txt > clusters.txt
 bedtools getfasta
 
 #For each cluster (fasta file) run cmfinder
-cat ../Cluster$1.fasta | awk '/^>/{print ">" ++i; next}{print}' | head -n200 > ../$1.fasta
 perl cmfinder-0.4.1.9/bin/cmfinder04.pl -cpu 12 -c 100 -skipClustalw -minCandScoreInFinal 10 -combine -fragmentary -commaSepEmFlags x--filter-non-frag,--max-degen-per-hit,2,--max-degen-flanking-nucs,7,--degen-keep,--amaa ../$1.fasta\
 
 #Score alignments using RNAphylo, only proceed with those given a p score greater than 10
