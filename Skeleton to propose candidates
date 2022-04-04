@@ -25,4 +25,4 @@ cmsearch -E 0.000001 --noali --tblout Candidateshit.out candidatestructures.cm {
 #Ensure that none of these candidates hit any regions that are also hit by Rfam structures - also don't want to propose redundant structures in Rfam.
 cmsearch --ga --noali --tblout Rfamstructures.out Rfam14.7.cm {genome_fasta}
 
-#the final set should be uniquely and significantly hitting the regions they were derived from without any redudancy to Rfam or other models proposed. 
+#the final set should be uniquely and significantly hitting the regions they were derived from without any redundancy to Rfam or other models proposed. 
